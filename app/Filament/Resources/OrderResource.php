@@ -6,6 +6,8 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\OrderResource\Pages;
 use App\Filament\Resources\OrderResource\RelationManagers;
+ use App\Filament\Resources\OrderResource\RelationManagers\AddressRelationManager;
+
 use App\Models\Order;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -36,7 +38,6 @@ use Filament\Tables\Actions\ActionGroup;
 use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Actions\DeleteAction;
-
 use Filament\Forms\Components\Placeholder;
 use Illuminate\Support\Number;
 use App\Models\Product; 
@@ -365,7 +366,7 @@ TextInput::make('total_amount')
     public static function getRelations(): array
     {
         return [
-            //
+            AddressRelationManager::class
         ];
     }
 
