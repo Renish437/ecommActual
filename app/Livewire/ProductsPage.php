@@ -81,7 +81,7 @@ if($this->sort=='price'){
 
 
         return view('livewire.products-page',[
-            'products'=>$productQuery->paginate(8),
+            'products'=>$productQuery->paginate(9),
             'brands'=>Brand::where('is_active',1)->get(['id','name','slug']),
             'categories'=>Category::where('is_active',1)->get(['id','name','slug']),
         ]);
