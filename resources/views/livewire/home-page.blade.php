@@ -275,9 +275,7 @@
           </div>
         </div>
         <p class="mb-12 text-base text-center text-gray-500">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus magni eius eaque?
-          Pariatur
-          numquam, odio quod nobis ipsum ex cupiditate?
+        
         </p>
       </div>
     </div>
@@ -295,12 +293,11 @@
               <p class="text-xs text-gray-500 dark:text-gray-400">Web Designer</p>
             </div>
           </div>
-          <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 12, SEP , 2022
+          <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 8, AUG , 2024
           </p>
         </div>
         <p class="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate similique,
-          iure minus sed fugit obcaecati minima quam reiciendis dicta!
+        The product selection is excellent, with many great options available. However, I found the checkout process a bit confusing. Overall, the quality of the products makes up for it, and I’m happy with my purchase.
         </p>
         <div class="flex flex-wrap justify-between pt-4 border-t dark:border-gray-700">
           <div class="flex px-6 mb-2 md:mb-0">
@@ -351,7 +348,7 @@
                     </path>
                   </svg>
                 </a>
-                <span>12</span>
+                <span>50</span>
               </div>
               <div class="flex text-sm text-gray-700 dark:text-gray-400">
                 <a href="#" class="inline-flex hover:underline">
@@ -376,12 +373,11 @@
               <p class="text-xs text-gray-500 dark:text-gray-400">Manager</p>
             </div>
           </div>
-          <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 12, SEP , 2022
+          <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 8, AUG , 2024
           </p>
         </div>
         <p class="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate similique,
-          iure minus sed fugit obcaecati minima quam reiciendis dicta!
+        The website has a wide array of gadgets and accessories, which is fantastic. The checkout process was a bit tricky, but the quality of the products made up for it. Overall, a good experience."
         </p>
         <div class="flex flex-wrap justify-between pt-4 border-t dark:border-gray-700">
           <div class="flex px-6 mb-2 md:mb-0">
@@ -430,7 +426,7 @@
                     <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z">
                     </path>
                   </svg></a>
-                <span>12</span>
+                <span>20</span>
               </div>
               <div class="flex text-sm text-gray-700 dark:text-gray-400">
                 <a href="#" class="inline-flex hover:underline">
@@ -455,12 +451,11 @@
               <p class="text-xs text-gray-500 dark:text-gray-400">Marketing Officer</p>
             </div>
           </div>
-          <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 12, SEP , 2022
+          <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 8, AUG , 2024
           </p>
         </div>
         <p class="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate similique,
-          iure minus sed fugit obcaecati minima quam reiciendis dicta!
+        The product selection is excellent, with many great options available. However, I found the checkout process a bit confusing. Overall, the quality of the products makes up for it, and I’m happy with my purchase
         </p>
         <div class="flex flex-wrap justify-between pt-4 border-t dark:border-gray-700">
           <div class="flex px-6 mb-2 md:mb-0">
@@ -509,7 +504,7 @@
                     <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z">
                     </path>
                   </svg></a>
-                <span>12</span>
+                <span>56</span>
               </div>
               <div class="flex text-sm text-gray-700 dark:text-gray-400">
                 <a href="#" class="inline-flex hover:underline">
@@ -534,12 +529,11 @@
               <p class="text-xs text-gray-500 dark:text-gray-400">Java Programmer</p>
             </div>
           </div>
-          <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 12, SEP , 2022
+          <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 8, AUG , 2024
           </p>
         </div>
         <p class="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate similique,
-          iure minus sed fugit obcaecati minima quam reiciendis dicta!
+        Great range of products and good quality. The only downside was a somewhat complicated checkout process. Despite this, I’m satisfied with the purchase and would shop here again.
         </p>
         <div class="flex flex-wrap justify-between pt-4 border-t dark:border-gray-700">
           <div class="flex px-6 mb-2 md:mb-0">
@@ -588,7 +582,7 @@
                     <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z">
                     </path>
                   </svg></a>
-                <span>12</span>
+                <span>90</span>
               </div>
               <div class="flex text-sm text-gray-700 dark:text-gray-400">
                 <a href="#" class="inline-flex hover:underline">
