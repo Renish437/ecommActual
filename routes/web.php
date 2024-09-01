@@ -29,6 +29,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', HomePage::class );
+Route::get('/home', HomePage::class );
 Route::get('/categories', CategoriesPage::class );
 Route::get('/products', ProductsPage::class);
 Route::get('/cart', CartPage::class);
