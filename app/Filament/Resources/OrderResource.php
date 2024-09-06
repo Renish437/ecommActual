@@ -40,7 +40,7 @@ use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Forms\Components\Placeholder;
 use Illuminate\Support\Number;
-use App\Models\Product; 
+use App\Models\Product;
 
 
 
@@ -92,7 +92,7 @@ Group::make()->schema([
         ->options([
             'pending'=>'Pending',
             'paid'=>'Paid',
-            'falied'=>'Failed',
+            'failed'=>'Failed',
         ])
         ->default('pending')
         ->required(),
@@ -142,9 +142,9 @@ Group::make()->schema([
         ]),
 
         Textarea::make('notes')
-       
+
         ->columnSpanFull(),
-       
+
     ]) ->columns(2),
     Section::make('Order Items')->schema([
         Repeater::make('items')
@@ -169,7 +169,7 @@ Group::make()->schema([
         //     ->minValue(1)
         //     ->columnSpan(2)
         //     ->reactive()
-        //     ->afterStateUpdated(fn($state, Set $set, Get $get) => 
+        //     ->afterStateUpdated(fn($state, Set $set, Get $get) =>
         //     $set('total_amount', $state * $get('unit_amount'))  // Calculate total_amount as quantity * unit_amount
         // ),
 
@@ -205,8 +205,8 @@ Group::make()->schema([
         $quantity = $get('quantity') ?? 1;
         $set('total_amount', $unitPrice * $quantity);
     }),
-    
-    
+
+
 
 
 TextInput::make('quantity')
@@ -227,14 +227,14 @@ TextInput::make('quantity')
         $quantity = is_numeric($state) ? $state : 0;
 
         // Debug values
-        \Log::info('Quantity:', ['quantity' => $quantity]);
-        \Log::info('Unit Price:', ['unitPrice' => $unitPrice]);
+        Log::info('Quantity:', ['quantity' => $quantity]);
+        Log::info('Unit Price:', ['unitPrice' => $unitPrice]);
 
         // Calculate total amount
         $totalAmount = $quantity * $unitPrice;
 
         // Debug total amount
-        \Log::info('Total Amount:', ['totalAmount' => $totalAmount]);
+        Log::info('Total Amount:', ['totalAmount' => $totalAmount]);
 
         // Set total amount
         $set('total_amount', $totalAmount);
@@ -259,11 +259,11 @@ TextInput::make('unit_amount')
 TextInput::make('total_amount')
     ->numeric()
     ->required()
-    ->disabled() 
+    ->disabled()
     ->dehydrated() // Disable to prevent manual editing
     ->columnSpan(3),
 
-            
+
 
         ])->columns(12),
 
@@ -272,22 +272,22 @@ TextInput::make('total_amount')
         ->content(function (Get $get,Set $set) {
             $total = 0;
             $repeaters = $get('items');
-    
+
             if ($repeaters) {
                 foreach ($repeaters as $key => $repeater) {
                     $total += $get("items.{$key}.total_amount");
                 }
                 $set('grand_total',$total);
             }
-            
+
             // Format total as currency
             return Number::currency($total, 'NPR');
-           
+
         }),
 
         Hidden::make('grand_total')
         ->default(0)
-    
+
     ])
 ])->columnSpanFull()
                 //

@@ -12,6 +12,9 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+// use Illuminate\Support\Facades\Image;
+use Illuminate\Support\Facades\Storage;
+
 
 use Filament\Forms\Set;
 use Illuminate\Support\Str;
@@ -24,7 +27,7 @@ use Filament\Tables\Actions\ActionGroup;
 use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Actions\DeleteAction;
-use Intervention\Image\ImageManagerStatic as Image;
+// use Intervention\Image\ImageManagerStatic as Image;
 
 class BrandResource extends Resource
 {
@@ -48,20 +51,20 @@ class BrandResource extends Resource
                         ->maxLength(255) // Removed the extra comma here
                         ->live(onBlur: true) // This will work now
                         ->afterStateUpdated(fn (string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
-                    
+
                     TextInput::make('slug')
                         ->required()
                         ->maxLength(255)
                         ->disabled()
                         ->dehydrated()
                         ->unique(Brand::class, 'slug', ignoreRecord: true),
-                    
+
                     ]),
                     // FileUpload::make('image')
                     // ->image()
                     // ->directory('categories'),
 
-                    
+
 
 FileUpload::make('image')
     ->image()
@@ -69,17 +72,17 @@ FileUpload::make('image')
     ->saveUploadedFileUsing(function ($file, $state, $set) {
         // Get the file's extension
         $extension = $file->getClientOriginalExtension();
-        
+
         // Check if the extension is jfif
         if ($extension === 'jfif') {
             // Load and convert jfif image to jpg
-            $image = Image::make($file)->encode('jpg');
-            
+            // $image = Image::make($file)->encode('jpg');
+
             // Define the path for saving the image
             $path = 'brands/' . uniqid() . '.jpg';
 
             // Save the image to the disk
-            \Storage::disk('public')->put($path, (string) $image);
+            // Storage::disk('public')->put($path, (string) $image);
 
             // Update the state with the new file path
             $set('image', $path);
@@ -96,8 +99,8 @@ FileUpload::make('image')
                     ->required()
                     ->default(true),
                 ])
-               
-           
+
+
 
 
                 // Forms\Components\TextInput::make('name')

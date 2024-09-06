@@ -5,8 +5,11 @@ use App\Helpers\CartManagement;
 use App\Models\Order;
 use App\Models\Address;
 use Stripe\Stripe;
+use Livewire\Attributes\Title;
 use Stripe\Checkout\Session;
 use Livewire\Component;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OrderPlaced;
 
 #[Title('Checkout')]
 class CheckoutPage extends Component
@@ -41,14 +44,14 @@ class CheckoutPage extends Component
 
     //     $cart_items=CartManagement::getCartItemsFromCookie();
     //     $line_items=[];
-        
+
     //     foreach($cart_items as $item){
     //         $line_items[]=[
-    
-    
+
+
     //             'price_data'=>[
     //             'currency'=>'npr',
-    
+
     //              'product_data'=>[
     //               'name'=>$item['name'],
     //              ],
@@ -84,7 +87,7 @@ class CheckoutPage extends Component
     //     Stripe::setApiKey(env('STRIPE_SECRET'));
     //     try{
 
-        
+
     //     $sessionCheckout=\Stripe\Checkout\Session::create([
     //         'payment_method_types'=>['card'],
     //         'customer_email'=>auth()->user()->email,
@@ -110,14 +113,14 @@ class CheckoutPage extends Component
     //     } catch (\Exception $e) {
     //      return response()->json(['error'=>$e->getMessage()],500);
     //     }
-        
+
     //     CartManagement::clearCartItems();
     //     return redirect($redirect_url);
     // }
 
 public function placeOrder()
 {
-    
+
     $this->validate([
         'first_name' => 'required',
         'last_name' => 'required',
@@ -129,7 +132,7 @@ public function placeOrder()
         'payment_method' => 'required',
     ]);
 
-    
+
     $cart_items = CartManagement::getCartItemsFromCookie();
     $line_items = [];
 
@@ -146,7 +149,7 @@ public function placeOrder()
         ];
     }
 
-    
+
     $order = new Order();
     $order->user_id = auth()->user()->id;
     $order->grand_total = CartManagement::calculateGrandTotal($cart_items);
@@ -158,7 +161,7 @@ public function placeOrder()
     $order->shipping_method = 'none';
     $order->notes = 'Order Placed by ' . auth()->user()->name;
 
-    
+
     $address = new Address();
     $address->first_name = $this->first_name;
     $address->last_name = $this->last_name;
@@ -170,7 +173,7 @@ public function placeOrder()
 
     $redirect_url = '';
 
-    
+
     if ($this->payment_method == 'stripe') {
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
@@ -186,30 +189,31 @@ public function placeOrder()
 
             $redirect_url = $sessionCheckout->url;
         } catch (\Exception $e) {
-           
+
             return response()->json(['error' => $e->getMessage()], 500);
         }
     } else {
         $redirect_url = route('success');
     }
 
-    
+
     $order->save();
     $address->order_id = $order->id;
     $address->save();
 
-   
+
     try {
         $order->items()->createMany($cart_items);
     } catch (\Exception $e) {
-        
+
         return response()->json(['error' => $e->getMessage()], 500);
     }
 
-   
-    CartManagement::clearCartItems();
 
-    
+    CartManagement::clearCartItems();
+    Mail::to(request()->user())->send(new OrderPlaced($order));
+
+
     return redirect($redirect_url);
 }
 

@@ -2,7 +2,7 @@
   <section class="overflow-hidden bg-white py-11 font-poppins dark:bg-gray-800">
     <div class="max-w-6xl px-4 py-4 mx-auto lg:py-8 md:px-6">
 
- 
+
       <div class="flex flex-wrap -mx-4">
         <div class="w-full mb-8 md:w-1/2 md:mb-0" x-data="{ mainImage: '{{ url('storage',$product->images[0])}}' }">
           <div class="sticky top-0 z-50 overflow-hidden ">
@@ -13,11 +13,11 @@
 
             @foreach($product->images as $image)
               <div class="w-1/2 p-2 sm:w-1/4" x-on:click="mainImage='{{url('storage',$image)}}'">
-                <img src="{{url('storage',$image)}}" alt="{{$product->name}}" class="object-cover w-full lg:h-20 cursor-pointer hover:border hover:border-blue-500">
+                <img src="{{url('storage',$image)}}" alt="{{$product->name}}" class="object-cover w-full cursor-pointer lg:h-20 hover:border hover:border-blue-500">
               </div>
 
               @endforeach
-            
+
             </div>
             <div class="px-6 pb-6 mt-6 border-t border-gray-300 dark:border-gray-400 ">
               <div class="flex flex-wrap items-center mt-6">
@@ -42,8 +42,15 @@
                 <!-- <span class="text-base font-normal text-gray-500 line-through dark:text-gray-400">$1800.99</span> -->
               </p>
               <p class="max-w-md text-gray-700 dark:text-gray-400">
-               <!-- {{$product->description}} -->
-                {{!! Str::markdown($product->description)  !!}}
+               {{-- {{$product->description}} --}}
+                {{-- {{!! Str::markdown($product->description)  !!}} --}}
+                @if (!is_null($product->description))
+    {!! Str::markdown($product->description) !!}
+@else
+    <!-- Optionally, display a default message or handle the case when description is null -->
+    <p class="font-bold text-slate-500">No description available.</p>
+@endif
+
               </p>
             </div>
             <div class="w-32 mb-8 ">
