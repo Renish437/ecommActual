@@ -82,7 +82,7 @@ Group::make()->schema([
 
         Select::make('payment_method')
         ->options([
-            'strive'=>'Stripe',
+            'stripe'=>'Stripe',
             'cod'=>'Cash On Delivery',
 
         ])
