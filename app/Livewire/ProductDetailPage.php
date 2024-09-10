@@ -24,9 +24,9 @@ class ProductDetailPage extends Component
       if($this->quantity>1){
         $this->quantity--;
       }
-      
+
     }
-    
+
     public function addToCart($product_id){
 
       $total_count=CartManagement::addItemToCartWithQty($product_id,$this->quantity);

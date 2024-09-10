@@ -1,7 +1,7 @@
 <div>
     <!-- Hero-Section Start -->
 
-<div class="w-full h-screen px-4 py-10 mx-auto bg-gradient-to-r from-blue-200 to-purple-200 sm:px-6 lg:px-8">
+<div class="w-full h-screen px-4 py-10 mx-auto bg-gradient-to-r from-blue-300 via-purple-300 to-fuchsia-300 sm:px-6 lg:px-8">
   <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Grid -->
     <div class="grid gap-4 md:grid-cols-2 md:gap-8 xl:gap-20 md:items-center">
@@ -17,7 +17,7 @@
               <path d="m9 18 6-6-6-6" />
             </svg>
           </a>
-          <a class="inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-gray-800 bg-white border border-gray-200 rounded-lg shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/contact">
+          <a class="inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-gray-800 bg-white border border-gray-200 rounded-lg shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/about">
             Contact sales team
           </a>
         </div>
@@ -146,7 +146,7 @@
 
 
 <!-- Brand Section Start -->
-<section class="py-20">
+<section class="py-20 bg-gray-300 ">
   <div class="max-w-xl mx-auto">
     <div class="text-center ">
       <div class="relative flex flex-col items-center">
@@ -254,7 +254,7 @@
 <!-- Category Section End -->
 
 <!-- Customer Review Section Start -->
-<section class="py-14 font-poppins dark:bg-gray-800">
+<section class="bg-gray-300 py-14 font-poppins dark:bg-gray-800">
   <div class="max-w-6xl px-4 py-6 mx-auto lg:py-4 md:px-6">
     <div class="max-w-xl mx-auto">
       <div class="text-center ">

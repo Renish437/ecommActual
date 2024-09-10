@@ -15,6 +15,8 @@ use App\Livewire\Auth\RegisterPage;
 use App\Livewire\Auth\ForgotPasswordPage;
 use App\Livewire\Auth\ResetPasswordPage;
 use App\Http\Controllers\ImageController;
+use App\Livewire\AboutPage;
+use App\Livewire\UserInfoPage;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +31,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', HomePage::class );
+Route::get('/about', AboutPage::class );
+Route::get('/userinfo', UserInfoPage::class );
 Route::get('/home', HomePage::class );
 Route::get('/categories', CategoriesPage::class );
 Route::get('/products', ProductsPage::class);

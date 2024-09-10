@@ -1,10 +1,10 @@
-<header class="sticky top-0 z-50 flex flex-wrap w-full py-3 text-sm bg-white shadow-md md:justify-start md:flex-nowrap md:py-0 dark:bg-gray-800">
+<header class="sticky top-0 z-50 flex flex-wrap w-full py-3 text-sm bg-gray-900 shadow-md md:justify-start md:flex-nowrap md:py-0 dark:bg-gray-800">
   <nav class="max-w-[85rem] w-full mx-auto px-4 md:px-6 py-2 lg:px-8" aria-label="Global">
     <div class="relative md:flex md:items-center md:justify-between">
       <div class="flex items-center justify-between">
-        <a class="flex-none text-xl font-semibold dark:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/" aria-label="Brand">GTechMaria</a>
+        <a class="flex-none text-xl font-semibold text-blue-500 dark:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/" aria-label="Brand">GTechMaria</a>
         <div class="md:hidden">
-          <button type="button" class="flex items-center justify-center text-sm font-semibold text-gray-800 border border-gray-200 rounded-lg hs-collapse-toggle w-9 h-9 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" data-hs-collapse="#navbar-collapse-with-animation" aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">
+          <button type="button" class="flex items-center justify-center text-sm font-semibold text-gray-800 border border-gray-200 rounded-lg hs-collapse-toggle w-9 h-9 hover:bg-gray-400 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" data-hs-collapse="#navbar-collapse-with-animation" aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">
             <svg class="flex-shrink-0 w-4 h-4 hs-collapse-open:hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="3" x2="21" y1="6" y2="6" />
               <line x1="3" x2="21" y1="12" y2="12" />
@@ -19,10 +19,10 @@
       </div>
 
       <div id="navbar-collapse-with-animation" class="hidden overflow-hidden transition-all duration-300 hs-collapse basis-full grow md:block">
-        <div class="overflow-hidden overflow-y-auto max-h-[75vh] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-slate-700 dark:[&::-webkit-scrollbar-thumb]:bg-slate-500">
+        <div class="overflow-hidden overflow-y-auto max-h-[75vh] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-slate-700 dark:[&::-webkit-scrollbar-thumb]:bg-slate-500 ">
           <div class="flex flex-col mt-5 divide-y divide-gray-200 gap-x-0 divide-dashed md:flex-row md:items-center md:justify-end md:gap-x-7 md:mt-0 md:ps-7 md:divide-y-0 md:divide-solid dark:divide-gray-700">
 
-            <a wire:navigate class="font-medium {{request()->is('/')?'text-blue-600':'text-gray-500'}} text-blue-600 py-3 md:py-6 dark:text-blue-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/" aria-current="page">Home</a>
+            <a wire:navigate class="font-medium {{request()->is('/')?'text-blue-600':'text-gray-500'}} text-blue-600 py-3 md:py-6 dark:text-blue-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600  " href="/" aria-current="page">Home</a>
 
             <a wire:navigate class="font-medium {{request()->is('categories')?'text-blue-600':'text-gray-500'}} hover:text-gray-400 py-3 md:py-6 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/categories">
               Categories
@@ -55,11 +55,72 @@
 
          @auth
 
+         <div class="text-white text-semibold">
+            {{auth()->user()->name}}
+        </div>
+        <div>
+         <button type="button" class="relative flex text-sm bg-gray-800 rounded-full focus:outline-none focus:ring-4 focus:ring-blue-200 focus:ring-offset-1 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
 
-             <div class="hs-dropdown [--strategy:static] md:[--strategy:fixed] [--adaptive:none] md:[--trigger:hover] md:py-4">
+            <span class="absolute -inset-1.5"></span>
+            <span class="sr-only">Open user menu</span>
+            <img class="w-8 h-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+            {{-- <img class="w-8 h-8 rounded-full" src="hhttps://media.istockphoto.com/id/908231976/photo/bearded-young-man-with-hat.jpg?s=1024x1024&w=is&k=20&c=GIj5_zBAkIH8N8V2hfBxThSaEahLVAeGAgkILnivq7o=" alt="">
+ --}}
+
+          </button>
+
+          <div class="absolute right-0 z-10 hidden w-48 py-1 mt-2 origin-top-left bg-white rounded-md shadow-lg ring-4 ring-black ring-opacity-5 focus:outline-none" id="user-menu" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+
+          <a href="/userinfo" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">My Profile</a>
+          <a href="/my-orders" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0" >My Orders</a>
+          <a href="/logout" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2 " >Sign out</a>
+        </div>
+      </div>
+
+
+
+
+
+
+       <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const button = document.getElementById('user-menu-button');
+          const menu = document.getElementById('user-menu');
+
+          button.addEventListener('click', function (event) {
+            event.stopPropagation(); // Prevent the click event from bubbling up
+            const expanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', !expanded);
+            menu.classList.toggle('hidden');
+          });
+
+          document.addEventListener('click', function (event) {
+            // Close the menu if the click is outside the button and menu
+            if (!button.contains(event.target) && !menu.contains(event.target)) {
+              menu.classList.add('hidden');
+              button.setAttribute('aria-expanded', 'false');
+            }
+          });
+        });
+      </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+             {{-- <div class="hs-dropdown [--strategy:static] md:[--strategy:fixed] [--adaptive:none] md:[--trigger:hover] md:py-4">
               <button type="button" class="flex items-center w-full p-1 font-medium text-gray-500 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500">
 
                 {{auth()->user()->name}}
+
             <svg class="w-4 h-4 ms-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="m6 9 6 6 6-6" />
             </svg>
@@ -92,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-</script>
+</script> --}}
 
 
 
@@ -105,3 +166,5 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   </nav>
 </header>
+
+

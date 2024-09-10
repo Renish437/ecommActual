@@ -1,17 +1,17 @@
 <div class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
-  <div class="container mx-auto px-4">
-    <h1 class="text-2xl font-semibold mb-4">Shopping Cart</h1>
-    <div class="flex flex-col md:flex-row gap-4">
+  <div class="container px-4 mx-auto">
+    <h1 class="mb-4 text-2xl font-semibold">Shopping Cart</h1>
+    <div class="flex flex-col gap-4 md:flex-row">
       <div class="md:w-3/4">
-        <div class="bg-white overflow-x-auto rounded-lg shadow-md p-6 mb-4">
+        <div class="p-6 mb-4 overflow-x-auto bg-white rounded-lg shadow-md">
           <table class="w-full">
             <thead>
               <tr >
-                <th class="text-left font-semibold">Product</th>
-                <th class="text-left font-semibold">Price</th>
-                <th class="text-left font-semibold">Quantity</th>
-                <th class="text-left font-semibold">Total</th>
-                <th class="text-left font-semibold">Remove</th>
+                <th class="font-semibold text-left">Product</th>
+                <th class="font-semibold text-left">Price</th>
+                <th class="font-semibold text-left">Quantity</th>
+                <th class="font-semibold text-left">Total</th>
+                <th class="font-semibold text-left">Remove</th>
               </tr>
             </thead>
             <tbody>
@@ -19,7 +19,7 @@
               <tr wire:key="{{$item['product_id']}}">
                 <td class="py-4">
                   <div class="flex items-center">
-                    <img class="h-16 w-16 mr-4" src="{{url('storage',$item['image'])}}" alt="{{$item['name']}}">
+                    <img class="w-16 h-16 mr-4" src="{{url('storage',$item['image'])}}" alt="{{$item['name']}}">
                     <span class="font-semibold">{{$item['name']}}</span>
                   </div>
                 </td>
@@ -28,32 +28,32 @@
                 </td>
                 <td class="py-4">
                   <div class="flex items-center">
-                    <button wire:click='decreaseQty({{$item["product_id"]}})' class="border rounded-md py-2 px-4 mr-2">-</button>
-                    <span class="text-center w-8">{{$item['quantity']}}</span>
-                    <button wire:click='increaseQty({{$item["product_id"]}})' class="border rounded-md py-2 px-4 ml-2">+</button>
+                    <button wire:click='decreaseQty({{$item["product_id"]}})' class="px-4 py-2 mr-2 border rounded-md">-</button>
+                    <span class="w-8 text-center">{{$item['quantity']}}</span>
+                    <button wire:click='increaseQty({{$item["product_id"]}})' class="px-4 py-2 ml-2 border rounded-md">+</button>
                   </div>
                 </td>
                 <td class="py-4">
                 {{Number::currency($item['total_amount'],'NPR')}}
                 </td>
-                <td><button wire:click="removeItem({{ $item['product_id'] }})" class="bg-slate-300 border-2 border-slate-400 rounded-lg px-3 py-1 hover:bg-red-500 hover:text-white hover:border-red-700">
+                <td><button wire:click="removeItem({{ $item['product_id'] }})" class="px-3 py-1 border-2 rounded-lg bg-slate-300 border-slate-400 hover:bg-red-500 hover:text-white hover:border-red-700">
                 <span wire:loading.remove wire:target="removeItem({{ $item['product_id'] }})">Remove</span>
                 <span wire:loading wire:target="removeItem({{ $item['product_id'] }})">Removing...</span></button></td>
               </tr>
               @empty
               <tr>
-                <td colspan="5" class="text-center py-4 text-4xl font-semibold text-slate-500">No Items Available in Cart! </td>
+                <td colspan="5" class="py-4 text-4xl font-semibold text-center text-slate-500">No Items Available in Cart! </td>
               </tr>
               @endforelse
-              
+
               <!-- More product rows -->
             </tbody>
           </table>
         </div>
       </div>
       <div class="md:w-1/4">
-        <div class="bg-white rounded-lg shadow-md p-6">
-          <h2 class="text-lg font-semibold mb-4">Summary</h2>
+        <div class="p-6 bg-white rounded-lg shadow-md">
+          <h2 class="mb-4 text-lg font-semibold">Summary</h2>
           <div class="flex justify-between mb-2">
             <span>Subtotal</span>
             <span>{{Number::currency($grand_total,'NPR')}}</span>
@@ -72,10 +72,15 @@
             <span class="font-semibold">{{Number::currency($grand_total,'NPR')}}</span>
           </div>
           @if($cart_items)
-          <a href="/checkout" class="bg-blue-500 block text-center text-white py-2 px-4 rounded-lg mt-4 w-full">Checkout</a>
+          <a href="/checkout" class="block w-full px-4 py-2 mt-4 text-center text-white bg-blue-500 rounded-lg">Checkout</a>
           @endif
         </div>
       </div>
+
+
+
+
+
     </div>
   </div>
 </div>
