@@ -14,7 +14,7 @@ use App\Livewire\Auth\LoginPage;
 use App\Livewire\Auth\RegisterPage;
 use App\Livewire\Auth\ForgotPasswordPage;
 use App\Livewire\Auth\ResetPasswordPage;
-
+use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,6 +61,12 @@ Route::middleware('auth')->group(function(){
 Route::get('/cancel',CancelPage::class)->name('cancel');
 
 });
+// routes/web.php
+
+
+
+
+
 
 // Route::middleware('auth')->group(function(){
 //     Route::get('/logout', function(){
